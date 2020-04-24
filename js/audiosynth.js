@@ -351,7 +351,9 @@ Synth.loadSoundProfile({
 	{
 		name: 'custom',
 		attack: function () { return 0.01; },
-		dampen: function () { return 1; },
+		dampen: function (sampleRate, frequency, volume) {
+			return Math.pow(0.1 * Math.log((frequency * volume) / sampleRate), 3);
+		},
 		wave: function (i, sampleRate, frequency) {
 
 			var vars = this.vars;
