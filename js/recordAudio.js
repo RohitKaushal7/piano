@@ -22,6 +22,8 @@ const recordAudio = () =>
                 });
 
                 mediaRecorder.stop();
+                stream.getTracks() // get all tracks from the MediaStream
+                    .forEach(track => track.stop()); // stop each of them
             });
 
         resolve({ start, stop });
