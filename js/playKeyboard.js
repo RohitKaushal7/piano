@@ -34,7 +34,7 @@ function playKeyboard() {
 
 	document.addEventListener('keydown', (e) => {
 		if (e.keyCode == 37)
-			__octave = Math.max(__octave - 1, 0);
+			__octave = Math.max(__octave - 1, 1);
 		if (e.keyCode == 39)
 			__octave = Math.min(__octave + 1, 9);
 
