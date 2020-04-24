@@ -8,13 +8,22 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/audiosynth.js"></script>
+    <script src="js/recordAudio.js"></script>
     <script src="js/playKeyboard.js"></script>
+    <!-- <script src="js/recorder.js"></script> -->
 </head>
 
 <body>
     <main>
         <div class="info"></div>
         <div id="keyboard"></div>
+        <div class="record">
+            <div class="ctrl">
+                <div class="start" onclick="startRecording()"></div>
+                <div class="stop" onclick="stopRecording()"></div>
+            </div>
+            <div class="file"></div>
+        </div>
         <div class="note">
             <div>
                 Arrow Keys : <b>↔</b> change octave | <b>↕</b> change tone

@@ -1,3 +1,4 @@
+
 function playKeyboard() {
 
 	let pressColor = '#1BC0EA'; //color when key is pressed

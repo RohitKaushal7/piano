@@ -74,6 +74,11 @@ main {
           transform: scale(1.1);
 }
 
+.dark:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
 #keyboard {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -84,6 +89,7 @@ main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+  margin-top: 5em;
 }
 
 .key {
@@ -136,5 +142,62 @@ main {
   font-weight: bold;
   font-size: 0.7em;
   text-decoration: underline;
+}
+
+.record {
+  margin-top: 2em;
+  opacity: 0.1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  width: 100%;
+  max-width: 720px;
+}
+
+.record:hover {
+  opacity: 0.8;
+}
+
+.record .ctrl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.record .ctrl * {
+  padding: 0.7em;
+  display: inline-block;
+  margin: 0 0.5em;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.record .ctrl *:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.record .ctrl *:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.record .ctrl .start {
+  border-radius: 50%;
+  background: red;
+}
+
+.record .ctrl .stop {
+  background: #000;
+}
+
+.record .file {
+  margin-top: 1em;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

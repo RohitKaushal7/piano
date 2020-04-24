@@ -59,12 +59,16 @@ main{
     &:hover{
         transform: scale(1.1);
     }
+    &:active{
+        transform: scale(0.8);
+    }
 }
 
 #keyboard{
     display: flex;
     justify-content: center;
     align-items: start;
+    margin-top: 5em;
     // perspective: 2000px;
     // border-top: 5px solid #000;
 }
@@ -109,6 +113,46 @@ main{
         font-weight: bold;
         font-size: 0.7em;
         text-decoration: underline;
+    }
+}
+
+.record{
+    margin-top: 2em;
+    opacity: 0.1;
+    transition: all 0.2s;
+    width: 100%;
+    max-width: 720px;
+    &:hover{
+        opacity: 0.8;
+    }
+    .ctrl{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        *{
+            padding: 0.7em;
+            display: inline-block;
+            margin: 0 0.5em;
+            transition: all 0.2s;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+            &:active{
+                transform: scale(0.9);
+            }
+        }
+        .start{
+            border-radius: 50%;
+            background: red;
+        }
+        .stop{
+            background: #000;
+        }
+    }
+    .file{
+        margin-top: 1em;
+        text-align: center;
     }
 }
 
