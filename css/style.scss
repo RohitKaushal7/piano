@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+
+main{
+    // background: linear-gradient(#E91E63, #230000, #000);
+    // background: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.note,#me{
+    position: absolute;
+    bottom: 2em;
+    color: #555;
+    font-size: 0.5em;
+    text-align: center;
+}
+#me{
+    right: 1em;
+    bottom: 0.5em;
+    color: #eee;
+    cursor: pointer;
+    &:hover{
+        color: #999;
+    }
+}
+
+.info{
+    position: absolute;
+    top: 3rem;
+    font-weight: bold;
+    font-size: 4em;
+    color: #9999;
+}
+
+.dark{
+    position: absolute;
+    left: 1em;
+    bottom: 1em;
+    padding: 0.8em;
+    border-radius: 0.5em;
+    background: #000;
+    transition: all 0.2s;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+#keyboard{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    // perspective: 2000px;
+    // border-top: 5px solid #000;
+}
+
+.key{
+    perspective: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    transition: all 0.2s;
+    transform-origin: top;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 12px 0px #0003;
+    cursor: pointer;
+
+    .keyLabel{
+        cursor: pointer;
+        font-size: 0.5em;
+    }
+}
+
+.white{
+    background: #eee;
+    width: 2em;
+    height: 10em;
+    z-index: 10;
+    margin: 0 0.05em;
+}
+
+.black{
+    background: #000;
+    color: #fff;
+    height: 7em;
+    width: 1.5em;
+    z-index: 20;
+    margin: 0 -0.75em;
+}
+
+.key[id="KEY_E,-1"],.key[id="KEY_C,1"]{
+    .keyLabel{
+        font-weight: bold;
+        font-size: 0.7em;
+        text-decoration: underline;
+    }
+}
+

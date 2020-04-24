@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.note, #me {
+  position: absolute;
+  bottom: 2em;
+  color: #555;
+  font-size: 0.5em;
+  text-align: center;
+}
+
+#me {
+  right: 1em;
+  bottom: 0.5em;
+  color: #eee;
+  cursor: pointer;
+}
+
+#me:hover {
+  color: #999;
+}
+
+.info {
+  position: absolute;
+  top: 3rem;
+  font-weight: bold;
+  font-size: 4em;
+  color: #9999;
+}
+
+.dark {
+  position: absolute;
+  left: 1em;
+  bottom: 1em;
+  padding: 0.8em;
+  border-radius: 0.5em;
+  background: #000;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.dark:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#keyboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.key {
+  -webkit-perspective: 50px;
+          perspective: 50px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-box-shadow: 0 0 12px 0px #0003;
+          box-shadow: 0 0 12px 0px #0003;
+  cursor: pointer;
+}
+
+.key .keyLabel {
+  cursor: pointer;
+  font-size: 0.5em;
+}
+
+.white {
+  background: #eee;
+  width: 2em;
+  height: 10em;
+  z-index: 10;
+  margin: 0 0.05em;
+}
+
+.black {
+  background: #000;
+  color: #fff;
+  height: 7em;
+  width: 1.5em;
+  z-index: 20;
+  margin: 0 -0.75em;
+}
+
+.key[id="KEY_E,-1"] .keyLabel, .key[id="KEY_C,1"] .keyLabel {
+  font-weight: bold;
+  font-size: 0.7em;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=style.css.map */
