@@ -39,11 +39,12 @@ let startRecording = async () => {
 
 let stopRecording = async () => {
     audio = await recorder.stop()
-    console.log(audio);
 
     let container = new Audio(URL.createObjectURL(audio.audioBlob))
     container.setAttribute("controls", "true")
     container.seekable = true;
+    container.setAttribute("type", "audio/wav");
+    container.title = "play.wav";
     document.querySelector(".record .file").innerHTML = '';
     document.querySelector(".record .file").appendChild(container)
 
