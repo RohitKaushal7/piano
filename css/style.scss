@@ -23,8 +23,13 @@ main{
     position: absolute;
     bottom: 2em;
     color: #555;
-    font-size: 0.5em;
+    font-size: 0.6em;
     text-align: center;
+    opacity: 0.8;
+    cursor: default;
+    &:hover{
+        opacity: 1;
+    }
 }
 #me{
     right: 1em;
@@ -45,6 +50,15 @@ main{
     @media (max-width: 850px){
         font-size: 1em;
     }
+}
+#count{
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
+    color: #777;
+    opacity: 0.5;
+    font-size: 0.7em;
+    font-family: monospace;
 }
 
 .dark{
