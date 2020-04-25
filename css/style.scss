@@ -47,6 +47,7 @@ main{
     font-weight: bold;
     font-size: 4em;
     color: #9999;
+    margin-bottom: 0;
     @media (max-width: 850px){
         font-size: 1em;
     }
@@ -82,7 +83,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: start;
-    margin-top: 5em;
+    // margin-top: 1em;
     // perspective: 2000px;
     // border-top: 5px solid #000;
 }
@@ -166,6 +167,7 @@ main{
     }
     .file{
         margin-top: 1em;
+        min-height: 3em;
         text-align: center;
     }
 }

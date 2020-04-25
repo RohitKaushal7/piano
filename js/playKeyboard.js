@@ -30,6 +30,7 @@ function playKeyboard() {
 		dark = !dark;
 		this.style.backgroundColor = dark ? "#eee" : "#111";
 		document.body.style.background = dark ? "#111" : "#fff";
+		document.querySelector('canvas').style.filter = dark ? "invert(1)" : "invert(0)";
 	})
 
 
@@ -214,6 +215,7 @@ function playKeyboard() {
 
 	// Keys you have pressed down.
 	var keysPressed = [];
+	var pressedNotes = [];
 
 	// Generate keyboard
 	var iKeys = 0;
@@ -262,6 +264,16 @@ function playKeyboard() {
 			}
 		}
 		keysPressed.push(e.keyCode);
+
+		pressedNotes = [];
+		keysPressed.forEach(key => {
+			let modKey = keyboard[key].split(',');
+			modKey[1] = Number(modKey[1]) + 4;
+			modKey = modKey.join('/');
+			pressedNotes.push(modKey);
+		})
+
+		renderNote(pressedNotes);
 
 		if (keyboard[e.keyCode]) {
 			if (visualKeyboard[keyboard[e.keyCode]]) {
