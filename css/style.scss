@@ -62,7 +62,7 @@ main{
     font-family: monospace;
 }
 
-.dark{
+.dark, .sheet_toggle{
     position: absolute;
     left: 1em;
     bottom: 1em;
@@ -77,6 +77,11 @@ main{
     &:active{
         transform: scale(0.8);
     }
+}
+
+.sheet_toggle{
+    left: 3em;
+    background: #aaa;
 }
 
 #keyboard{

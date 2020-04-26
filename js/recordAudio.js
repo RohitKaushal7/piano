@@ -51,8 +51,3 @@ let stopRecording = async () => {
     document.querySelector(".record .file").appendChild(container)
 
 }
-
-// visit count
-fetch('https://api.countapi.xyz/hit/rohitkaushal7/piano_count').then(res => res.json()).then(res => {
-    document.querySelector("#count").innerHTML = res.value;
-})

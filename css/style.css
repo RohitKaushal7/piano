@@ -74,7 +74,7 @@ main {
   font-family: monospace;
 }
 
-.dark {
+.dark, .sheet_toggle {
   position: absolute;
   left: 1em;
   bottom: 1em;
@@ -86,14 +86,19 @@ main {
   cursor: pointer;
 }
 
-.dark:hover {
+.dark:hover, .sheet_toggle:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.dark:active {
+.dark:active, .sheet_toggle:active {
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
+}
+
+.sheet_toggle {
+  left: 3em;
+  background: #aaa;
 }
 
 #keyboard {

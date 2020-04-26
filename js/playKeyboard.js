@@ -32,6 +32,13 @@ function playKeyboard() {
 		document.body.style.background = dark ? "#111" : "#fff";
 		document.querySelector('canvas').style.filter = dark ? "invert(1)" : "invert(0)";
 	})
+	let sheet = true;
+	document.querySelector('.sheet_toggle').addEventListener('click', function (e) {
+		sheet = !sheet;
+		this.style.backgroundColor = sheet ? "#aaa" : "#00bcd4";
+		document.querySelector('canvas').style.display = sheet ? "block" : "none";
+		document.querySelector('.record .file').style.minHeight = sheet ? "3em" : "0";
+	})
 
 
 	document.addEventListener('keydown', (e) => {
@@ -265,15 +272,18 @@ function playKeyboard() {
 		}
 		keysPressed.push(e.keyCode);
 
-		pressedNotes = [];
-		keysPressed.forEach(key => {
-			let modKey = keyboard[key].split(',');
-			modKey[1] = Number(modKey[1]) + 4;
-			modKey = modKey.join('/');
-			pressedNotes.push(modKey);
-		})
+		if (sheet) {
 
-		renderNote(pressedNotes);
+			pressedNotes = [];
+			keysPressed.forEach(key => {
+				let modKey = keyboard[key].split(',');
+				modKey[1] = Number(modKey[1]) + 4;
+				modKey = modKey.join('/');
+				pressedNotes.push(modKey);
+			})
+
+			renderNote(pressedNotes);
+		}
 
 		if (keyboard[e.keyCode]) {
 			if (visualKeyboard[keyboard[e.keyCode]]) {
@@ -334,3 +344,9 @@ function playKeyboard() {
 	window.addEventListener('keydown', fnPlayKeyboard);
 	window.addEventListener('keyup', fnRemoveKeyBinding);
 }
+
+
+// visit count
+fetch('https://api.countapi.xyz/hit/rohitkaushal7/piano_count').then(res => res.json()).then(res => {
+	document.querySelector("#count").innerHTML = res.value;
+})
