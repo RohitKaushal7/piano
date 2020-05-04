@@ -4,6 +4,7 @@ function playKeyboard() {
 	let pressColor = '#1BC0EA'; //color when key is pressed
 	let visualKeyboard = document.getElementById('keyboard');
 	let src;
+	let recording = false;
 	let tones = ["Piano", "Organ", "Acoustic", "EDM", "Custom"];
 
 	var __audioSynth = new AudioSynth();
@@ -51,6 +52,11 @@ function playKeyboard() {
 			selectSound.value = (selectSound.value + 1) % 5;
 		if (e.keyCode == 40)
 			selectSound.value = (selectSound.value - 1) >= 0 ? (selectSound.value - 1) : 4;
+
+		if (e.keyCode == 32) { // [space] start / stop recording 
+			recording ? stopRecording() : startRecording();
+			recording = !recording;
+		}
 
 		document.querySelector(".info").innerText = `${tones[selectSound.value]} - ${__octave} `;
 
