@@ -24,6 +24,11 @@ main {
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .note, #me, #feedback {
   position: absolute;
   bottom: 2em;
