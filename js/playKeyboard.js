@@ -350,9 +350,3 @@ function playKeyboard() {
 	window.addEventListener('keydown', fnPlayKeyboard);
 	window.addEventListener('keyup', fnRemoveKeyBinding);
 }
-
-
-// visit count
-fetch('https://api.countapi.xyz/hit/rohitkaushal7/piano_count').then(res => res.json()).then(res => {
-	document.querySelector("#count").innerHTML = res.value;
-})

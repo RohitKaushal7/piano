@@ -24,7 +24,7 @@ main {
   min-height: 100vh;
 }
 
-.note, #me {
+.note, #me, #feedback {
   position: absolute;
   bottom: 2em;
   color: #555;
@@ -34,7 +34,7 @@ main {
   cursor: default;
 }
 
-.note:hover, #me:hover {
+.note:hover, #me:hover, #feedback:hover {
   opacity: 1;
 }
 
@@ -47,6 +47,17 @@ main {
 
 #me:hover {
   color: #999;
+}
+
+#feedback {
+  right: 1em;
+  bottom: 1.5em;
+  color: #aaa;
+  cursor: pointer;
+}
+
+#feedback:hover {
+  color: #0074aa;
 }
 
 .info {
@@ -221,5 +232,135 @@ main {
   margin-top: 1em;
   min-height: 3em;
   text-align: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #0009;
+  -webkit-animation: fade-in 0.5s;
+          animation: fade-in 0.5s;
+}
+
+.form {
+  padding: 1em;
+  margin: 2em;
+  -webkit-animation: pop 0.3s;
+          animation: pop 0.3s;
+  background: #fff;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 0.2em;
+}
+
+.form input, .form textarea, .form button {
+  padding: 0.3em 0.5em;
+  margin: 0 0 0.5em 0;
+  color: #333;
+  font-size: 1em;
+  border-radius: 0.2em;
+  border: none;
+  background: #eee;
+}
+
+.form input::-webkit-input-placeholder, .form textarea::-webkit-input-placeholder, .form button::-webkit-input-placeholder {
+  color: #eee;
+}
+
+.form input:-ms-input-placeholder, .form textarea:-ms-input-placeholder, .form button:-ms-input-placeholder {
+  color: #eee;
+}
+
+.form input::-ms-input-placeholder, .form textarea::-ms-input-placeholder, .form button::-ms-input-placeholder {
+  color: #eee;
+}
+
+.form input::placeholder, .form textarea::placeholder, .form button::placeholder {
+  color: #eee;
+}
+
+.form button {
+  font-weight: bold;
+  background: #0074aa;
+  color: #fff;
+  margin: 0.5em 0 0 0;
+  letter-spacing: 0.05em;
+}
+
+.form label {
+  font-size: 0.6em;
+  color: #0074aa;
+  font-weight: bold;
+}
+
+@-webkit-keyframes pop {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1, 0.5) skew(-30deg) translate(100%, 0);
+            transform: scale(1, 0.5) skew(-30deg) translate(100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1) skew(0deg) translate(0, 0);
+            transform: scale(1, 1) skew(0deg) translate(0, 0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1, 0.5) skew(-30deg) translate(100%, 0);
+            transform: scale(1, 0.5) skew(-30deg) translate(100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1) skew(0deg) translate(0, 0);
+            transform: scale(1, 1) skew(0deg) translate(0, 0);
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=style.css.map */

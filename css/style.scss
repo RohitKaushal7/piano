@@ -19,7 +19,7 @@ main{
     min-height: 100vh;
 }
 
-.note,#me{
+.note,#me,#feedback{
     position: absolute;
     bottom: 2em;
     color: #555;
@@ -38,6 +38,15 @@ main{
     cursor: pointer;
     &:hover{
         color: #999;
+    }
+}
+#feedback{
+    right: 1em;
+    bottom: 1.5em;
+    color: #aaa;
+    cursor: pointer;
+    &:hover{
+        color: #0074aa;
     }
 }
 
@@ -177,3 +186,75 @@ main{
     }
 }
 
+.modal{
+    display: none;
+    position: fixed;
+    justify-content: flex-end;
+    align-items: flex-end;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: #0009;
+    animation: fade-in 0.5s;
+}
+
+.form{
+    padding: 1em;
+    margin: 2em;
+    animation: pop 0.3s;
+    background: #fff;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.2em;
+
+    input,textarea,button{
+        padding: 0.3em 0.5em;
+        margin: 0 0 0.5em 0;
+        color: #333;
+        font-size: 1em;
+        border-radius: 0.2em;
+        border: none;
+        background: #eee;
+        &::placeholder{
+            color: #eee;
+        }
+    }
+    button{
+        font-weight: bold;
+        background: #0074aa;
+        color: #fff;
+        margin: 0.5em 0 0 0 ;
+        letter-spacing: 0.05em;
+    }
+    label{
+        font-size: 0.6em;
+        color: #0074aa;
+        font-weight: bold;
+    }
+}
+
+
+@keyframes pop {
+    0%{
+        opacity: 0;
+        transform: scale(1,0.5) skew(-30deg) translate(100%,0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1,1) skew(0deg) translate(0,0);
+    }
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}

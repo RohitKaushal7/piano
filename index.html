@@ -33,14 +33,29 @@
             </div>
         </div>
     </main>
+    <div id="feedback">feedback</div>
     <div id="me">
         made with love by Rohit Kaushal
     </div>
     <div class="dark"></div>
     <div class="sheet_toggle"></div>
+
+    <div class="modal">
+        <form action="#" name="feedback" class="form" netlify>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required placeholder="Your Name">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required placeholder="Email">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="30" rows="7" required placeholder="Your Message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
     <script>
         playKeyboard();
     </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
