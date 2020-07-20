@@ -35,6 +35,10 @@ const sleep = time => new Promise(resolve => setTimeout(resolve, time));
 let recorder;
 let startRecording = async () => {
     recorder = await recordAudio();
+    let old = document.querySelector('audio');
+    if (old) {
+        URL.revokeObjectURL(old.src)
+    }
     document.querySelector(".record .file").innerHTML = 'recording...';
     recorder.start();
 }
